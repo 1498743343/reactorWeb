@@ -1,0 +1,33 @@
+
+
+server:
+  port: 8081
+
+spring:
+  application:
+    name: reactorWeb
+  # mongo配置
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: test
+      username: test
+      password: czh
+# actuator 监控配置
+management:
+  info:
+    git:
+      mode: full
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      show-details: always
